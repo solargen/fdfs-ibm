@@ -50,3 +50,4 @@ cos:
   endpoint_url: https://s3.jp-tok.cloud-object-storage.appdomain.cloud
   location: jp-tok
   bucket_name: solargen-test
+  request_time_out: 10000

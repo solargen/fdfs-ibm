@@ -25,12 +25,11 @@ public class ObjectStorageUtils {
      * 创建AmazonS3客户端
      * @return
      */
-    public AmazonS3 createClient()
-    {
+    public AmazonS3 createClient(){
         AWSCredentials credentials;
         credentials = new BasicIBMOAuthCredentials(cosProperties.getApi_key(), cosProperties.getService_instance_id());
 
-        ClientConfiguration clientConfig = new ClientConfiguration().withRequestTimeout(15000);
+        ClientConfiguration clientConfig = new ClientConfiguration().withRequestTimeout(cosProperties.getRequest_time_out());
         clientConfig.setUseTcpKeepAlive(true);
 
         AmazonS3 cosClient = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(credentials))

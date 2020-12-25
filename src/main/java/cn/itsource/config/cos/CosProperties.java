@@ -14,5 +14,6 @@ public class CosProperties {
     private String endpoint_url;
     private String location;
     private String bucket_name;
+    private Integer request_time_out;
 
 }

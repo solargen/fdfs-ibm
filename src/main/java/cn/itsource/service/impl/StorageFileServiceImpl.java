@@ -1,6 +1,6 @@
-package cn.itsource.impl;
+package cn.itsource.service.impl;
 
-import cn.itsource.IStorageFileService;
+import cn.itsource.service.IStorageFileService;
 import cn.itsource.domain.StorageFile;
 import cn.itsource.mapper.StorageFileMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
