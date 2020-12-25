@@ -5,21 +5,26 @@ import cn.itsource.domain.StorageFile;
 import cn.itsource.util.AjaxResult;
 import com.github.tobato.fastdfs.domain.fdfs.StorePath;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FilenameUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
 @RestController
 @RequestMapping("/fdfs")
+@Slf4j
 public class FDFSController {
-
-    private Logger logger = LoggerFactory.getLogger(FDFSController.class);
-
     @Autowired
     private FastFileStorageClient storageClient;
     @Autowired
@@ -39,7 +44,7 @@ public class FDFSController {
                     extName,
                     null);
             String path = storePath.getFullPath();
-            logger.debug("文件上传成功，文件路径为{}",path);
+            log.debug("文件上传成功，文件路径为{}",path);
 
             //保存数据库
             StorageFile storageFile = new StorageFile();
@@ -54,5 +59,7 @@ public class FDFSController {
             return AjaxResult.me().setSuccess(false).setMessage("文件上传失败!"+e.getMessage());
         }
     }
+
+
 
 }

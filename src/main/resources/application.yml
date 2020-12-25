@@ -40,3 +40,13 @@ mybatis-plus:
   mapper-locations: class*:cn/itsource/mapper/*Mapper.xml
   configuration:
     map-underscore-to-camel-case: true
+
+# ===================================================================
+# IBM 对象存储配置
+# ===================================================================
+cos:
+  api_key: LME14pL_DBa4VriQUA7X4mc7rj2hR-s9LY6G-uK7tISx
+  service_instance_id: "crn:v1:bluemix:public:cloud-object-storage:global:a/3a0681143ecb45dc9bf321cfec0a5be6:25633186-9078-462e-92a6-f32050851a11::"
+  endpoint_url: https://s3.jp-tok.cloud-object-storage.appdomain.cloud
+  location: jp-tok
+  bucket_name: solargen-test

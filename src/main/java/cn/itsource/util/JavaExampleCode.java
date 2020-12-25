@@ -31,8 +31,6 @@ public class JavaExampleCode {
 
     public static void main(String[] args) throws IOException
     {
-        // Creating a random UUID (Universally unique identifier).
-        UUID uuid = UUID.randomUUID();
 
         // Constants for IBM COS values
         SDKGlobalConfiguration.IAM_ENDPOINT = "https://iam.cloud.ibm.com/oidc/token";
